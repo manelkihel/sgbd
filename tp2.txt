@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>comparatif des SGBD </title>
+  <link href="style1.css" rel="stylesheet" media="all" type="text/css">
+</head>
+<body>
+     <h1><a name ="haut"></a>Introduction</h1> 
+    <div class="info">
+		<ul>
+            <li>ORACLE </li>
+            <ol>
+                <li>Coût </li>
+                <li>Mono/multi plateforme (OS) </li>
+                <li>Richesse fonctionnelle </li>
+                <li>Norme SQL</li>
+                <li>Administration</li>
+            </ol>
+            <li>MySQL</li>
+           <ol>
+                <li>Coût </li>
+                <li>Mono/multi plateforme (OS) </li>
+                <li>Richesse fonctionnelle </li>
+                <li>Norme SQL</li>
+                <li>Administration</li>
+            </ol>
+            <li>Microsoft SQL Server  </li>
+           <ol>
+                <li>Coût </li>
+                <li>Mono/multi plateforme (OS) </li>
+                <li>Richesse fonctionnelle </li>
+                <li>Norme SQL</li>
+                <li>Administration</li>
+           </ol>
+           <li>Postgre SQL  </li>
+           <ol>
+                <li>Coût </li>
+                <li>Mono/multi plateforme (OS) </li>
+                <li>Richesse fonctionnelle </li>
+                <li>Norme SQL</li>
+                <li>Administration</li>
+           </ol>
+           <li>Mango DB  </li>
+           <ol>
+                <li>Coût </li>
+                <li>Mono/multi plateforme (OS) </li>
+                <li>Richesse fonctionnelle </li>
+                <li>Norme SQL</li>
+                <li>Administration</li>
+           </ol>
+	</div>
+	
+	
+     <div class="divHautNiveau">
+     <h2 class="titresection1" id="LI">ORACLE</h2>    
+     <div>
+          <p><right><img src="OIP.jpg" alt="logo Oracle" width="150" ></img> </right></p>
+     <p>
+     Version actuelle : 19.6 (= 12.2.0.3)
+     Disponibilité : Linux, Windows, Unix, MacOSX
+     Licence : commerciale, gratuite dans sa version Express
+     Autre contributeur : OraFrance
+     </p>
+     <p>
+          Oracle n'est pas un SGBDR optimisé pour de petites bases de données. Sur de petits volumes de traitements (2 Go par exemple) et peu d'utilisateurs (une trentaine) vous pourriez trouver des benchmark ou MySql offre des performances quasi comparables à Oracle... Si l'on monte à de plus importants volumes de donnée (>200Go) et un grand nombre d'utilisateurs (>300) les écarts de performance entre un MySql et un Oracle, Sybase, Db2 seront très visibles.</p>
+     
+     <p>
+     Versions
+     Oracle Enterprise Edition
+     Oracle Standard Edition
+     Oracle Database 10g Express Edition, limitée à 4 Go, 1 CPU, 1Go de RAM, 32 bits, Linux/Windows, gratuit
+</p>
+     <h3>Avantages</h3>
+     <p>
+          
+          Richesse fonctionnelle
+          Fonction d'audit évolué
+          Row level storage security (RLSS) : permet de ne faire apparaître que certaines lignes des tables pour un utilisateur/une application donné.
+          Intégration LDAP, SSL, Unicode; réplication intégrée; capable de mapper un fichier plat en table
+          Parallélisme, caches nommés; haute disponibilité; grande possibilité de tuning
+          Procédures stockées en PL-Sql (langage propriétaire Oracle, orienté ADA) ou ... en JAVA (depuis la 8.1.7) ce qui peut s'avérer utile pour les équipes de développement.
+          Assistants performants via Oracle Manager Server, possibilité de gérer en interne des tâches et des alarmes
+          Gestion centralisée de plusieurs instances
+          Concept unique de retour arrière (Flashback)
+          Pérennité de l'éditeur : avec plus de 40% de part de marché, ce n'est pas demain qu'Oracle disparaîtra
+          Réglages fins : dans la mesure où l'on connait suffisamment le moteur, presque TOUT est paramétrable.
+          Accès aux données système via des vues, bien plus aisément manipulables que des procédures stockées.
+          Interface utilisateur remaniée et extrêmement riche, permettant - enfin ! - le tuning fin de requêtes par modification des plans d'exécution.
+          Architecture Multi-Générationelle (MGA)
+          Services Web, support XML
+          Ordonnanceur intégré
+          Compression des données et des sauvegardes
+          Support technique Orion extrêmement riche et fourni
+     </p>
+     <h3>Inconvénients</h3>
+     <p>
+          Stratégies commerciales discutables (guerre ouverte avec VMWare, attaques avec Java payant, ...)
+          Prix élevé, tant au point de vue des licences que des composants matériels (RAM, CPU) à fournir pour de bonnes performances
+          Administration complexe... liée à la richesse fonctionnelle
+          Fort demandeur de ressources, ce qui n'arrange rien au point précité, Oracle est bien plus gourmand en ressource mémoire que ses concurrents, ce qui implique un investissement matériel non négligeable. La connexion utilisateur nécessite par exemple près de 700 Ko/utilisateur, contre une petite centaine sur des serveurs MS-SQL ou Sybase ASE. Gourmand aussi en espace disques puisque la plupart des modules requièrent leur propre ORACLE_HOME de par le versionning de patches incontrôlés.
+          Porosité entre les schémas = difficile de faire cohabiter de nombreuses applications sans devoir créer plusieurs instances. Il manque réellement la couche "base de données" au sens Db2/Microsost/Sybase du terme. Les nouveautés de le 12c (base multitenant) résolvent quelques lacunes, mais pas toutes
+          Métamodèle propriétaire, loin de la norme.
+          Tables partitionnées, RAC... uniquement possible à l'aide de modules payants complémentaires sur la version Enterprise.
+          Gestion des verrous mortels mal conçue (suppression d'une commande bloquante sans rollback)
+          Une quantité du bugs proportionnelle à la richesse fonctionnelle, surtout sur les dernières versions
+          Gestion erratique des rôles et privilèges (pas possible de donner des droits sur des schémas particuliers sans passer par leurs objets, désactivation des rôles lors d'exécution de packages...)
+          Nombreuses failles de sécurités liées à l'architecture elle-même</p></div>
+
+          <a href="TP 2 SGBD.html"tiltle="haut"><img src="haut.jpg" alt="haut" width="40" ></a></h2>
+     
+     <div><h2> MySQL</h2> 
+          <p><right><img src="mysql_100x52-64 (1).gif" alt="MySQL" width="150" ></img> </right></p>
+     <p>   
+     Version actuelle :8
+     Disponibilité : Linux, Windows, MacOSX, Unix, BSD, OS2, Docker
+     Licence : GPL et commerciale
+     
+     Versions
+     MySQL Community Server : licence GPL
+     MySQL Enterprise = MySQL Community Server + certifié sécurité et performance + licence d'entreprise
+     </p>
+     <p><h3>Avantages</h3>
+      très courante en hébergement public
+     Très bonne intégration dans l'environnement Apache/PHP
+     OpenSource, bien que les critères de licence soient de plus en plus difficiles à supporter
+     Version cluster depuis la version 4
+     Ordonnanceur dès la version 5.1
+     Partitonnement dès la version 5.1
+     Facilité de déploiement et de prise en main.
+     Plusieurs moteurs de stockage adaptés aux différentes problématiques, configurable au niveau table.</p>
+     <p><h3>Inconvénients</h3>
+     Ne supporte qu'une faible partie des standards SQL-92
+     Support incomplet des triggers et procédures stockées
+     Gestion des transactions avec les moteurs Falcon ou InnoDb uniquement
+     Dépend de la stratégie commerciale agressive d'Oracle
+     Assez peu de richesse fonctionnelle
+     Manque de robustesse avec de fortes volumétries
+     En cas de corruption, peu d'outils aident à la réparation et il faut souvent passer par une restauration
+     Pas d'héritage de table
+     Pas de vue matérialisée
+     -Cluster par clonage de base=> impact prépondérant sur la volumétrie</p>
+
+     <a href="TP 2 SGBD.html"tiltle="haut"><img src="haut.jpg" alt="haut" width="40" ></a></h2>
+</div>
+      
+ 
+     <div><h2>Sql Server</h2>
+          <p><right><img src="sqlServerLogo.jpg" alt="sqlServer" width="150" ></img> </right></p>
+     <p>
+ Version actuelle : 2019
+ Disponibilité : Windows (versions spécifiques selon type de Windows), Linux
+ Licence : commerciale, shared source dans sa version Express (avec obligation de s'enregistrer), Compact ou MSDE
+ Autre contributeur : SQLPro
+ 
+ Les avantages et inconvénients portent sur les 3 versions citées, compte tenu que techniquement, MSDE et SQL Server 2005 Express se basent sur un noyau Microsoft SQL Server bridé.
+ </p>
+ <p><h3>Avantages</h3>
+ Administration aisée
+ Fonction d'audit évolué
+ Indépendance entre les diverses bases, facilitant l'intégration de plusieurs applicatifs dans une même instance
+ Une des bases les plus performantes sous Windows en configuration par défaut
+ Optimiseur statistique enrichi à flux tendu
+ Réplication intégrée (sauf pour MSDE)
+ Frontaux et assistants très poussés (sauf pour MSDE)
+ Langage T-SQL très convivial, intégration de CLR
+ Sous-SELECT possible dans clause FROM
+ Gestion de l'indexation textuelle
+ Niveau de SQL très près de la norme SQL et implémente presque toutes les possibilités de SQL.
+ Services Web
+ Support XML
+ Ordonnanceur intégré
+ Supporte les 4 niveaux d'isolation transactionnelle de la norme SQL
+ Compression des données et des sauvegardes
+ Warm-Standby et haute disponibilité (AlwaysOn) via log shipping</p>
+
+ <p><h3>Inconvénients</h3>
+ Depuis la version 2005, plus de prise directe sur les tables système (remplacées par de vues système)
+ Pas de prise en charge du LDAP
+ Toujours pas de vrai cluster (hormis en actif-passif, en se basant sur le cluster OS)
+ Pas certifié SQLJ, pas d'intégration Java, orientation C#
+ Pas de contraintes d'unicité multi null
+ Pas d'implémentation totale du Row Value Constructor</p>
+ <a href="TP 2 SGBD.html"tiltle="haut"><img src="haut.jpg" alt="haut" width="40" ></a></h2>
+</div>
+
+
+ <div> <h2>PostgreSQL</h2>
+     <p><right><img src="hdr_left (1).png" alt="PostgreSQL" width="150" ></img> </right></p>
+     <p> actuelle : 12.2
+ Disponibilité : Linux, Unix, MacOSX, Windows Docker
+ Licence : BSD et commerciale (sous nom de EnterpriseDB Advanced Server 8.1)</p>
+ 
+ <h3>Avantages</h3>
+ <p>OpenSource et gratuit
+ Son extension PostGIS en fait un acteur clé du marché des environnements nécessitant du Spatial
+ Fiable et relativement performant, tout en restant simple d'utilisation
+ Supporte la majorité du standard SQL-92 et possède en plus un certain nombre d'extensions (Java, Ruby, PL-SQL).
+ Très riche fonctionnellement, notions d'héritage de tables, multitude de modules
+ Peut travailler en pool de connexions (cf pgpool)
+ Simple d'utilisation et d'administration
+ Héritage de tables
+ Warm-Standby via log shipping</p>
+ <p><h3>Inconvénients</h3>
+ Pas possible de requêter sur plusieurs bases à la fois : chaque base nécessite sa connexion
+ Sauvegardes peu évoluées
+ Pas d'update in-place (=> génération de beaucoup de Wal et vacuums nécessaires)
+ Pas de partage de plan d'exécution entre les sessions
+ Supporte les bases de moyenne importance
+ Pas de services Web
+ Pas d'ordonnanceur intégré
+ Pas de fonctions d'agrégat OLAP
+ Pas de requêtes récursives
+ Solutions de réplication pas encore totalement packagées
+ Solution en cluster pas finalisée (abandon de PgCluster, développement en cours de PgCluster2)</p>
+ <a href="TP 2 SGBD.html"tiltle="haut"><img src="haut.jpg" alt="haut" width="40" ></a></h2>
+</div>
+
+
+<div><p><h3>Tableau comparatif des 5 meilleurs SGBD</h3></p>
+<table border="1" width="400" height="250" align="center">
+     <tr align="center">
+          <th>SGBD/Criteres</th>
+         <th>Oracle (relationnel)</th>
+         <th>MySQL (relationnel)</th>
+         <th>Microsoft SQL Server (relationnel)</th>
+         <th>Postgre SQL (relationnel et orienté objet )</th>
+         <th>Mango DB (NO SQL)</th>
+     </tr>
+     <tr align="center">
+         <td>Coût</td>
+         <td><p>
+          Coût  élevé
+          -version Express  gratuite  avec des fonctionnalités très limitées.
+         </p></td>
+         <td>Gratuit +open source</td>
+         <td><p>
+          Coût  élevé
+         </p></td>
+         <td><p>
+          gratuit et Open Source
+         </p></td>
+         <td><p>
+          Gratuit et open source
+           version commercial pour entreprises
+         </p></td>
+     </tr>
+     <tr align="center">
+          <td>Mono/multi plateforme (OS)</td>
+          <td><p>
+               Linux, Windows, Unix, MacOSX,  scolaris, AIX, 
+               HP-UX           
+          </p></td>
+          <td>plusieurs  plates-formes, Linux,Windows, Unix ,MacOSX, BSD, OS2,etc..1</td>
+          <td><p>
+               Windows,
+               ( Linux, Mac OS X
+                pas accès à toutes les fonctionnalités)               
+          </p></td>
+          <td><p>
+               Linux, Unix, MacOSX, Windows Docker
+          </p></td>
+          <td><p>
+               Linux ,OS X ,Scolaris, windows
+          </p></td>
+      </tr>
+      <tr align="center">
+          <td>Richesse fonctionnelle</td>
+          <td><p>
+               Grande capacité
+             -Gestion centralisée de plusieurs instances3
+             -Il a un moteur puissant pour le traitement synchrone des données5
+          
+          </p></td>
+          <td>
+               X Assez peu 
+               de richesse fonctionnelle8
+               </td>
+          <td><p>
+               Offre de nombreuses fonctionnalités
+               -solutions ETL,
+               - outils de traitement analytique et l’exploration de données, 5
+                       </p></td>
+          <td><p>
+                         ✔ Nombreuses fonctionnalités avancées
+               -Création des données et   fonctions personnalisées,
+               -l’ héritage de schéma 11 Etc
+          </p></td>
+          <td><p>
+                         ✔Transactions ACID.
+               Langage de requête riche  et puissant7,
+               Documents JSON riches,etc.7
+          </p></td>
+      </tr>  
+      <tr align="center">
+          <td>Norme SQL</td>
+          <td><p>
+                              Conformité ANSI SQL
+               -Extensions  de  procédure : PL/SQL et Java.6
+
+          
+          </p></td>
+          <td>
+                              Conformité limitée5
+               -ne prend pas en charge certaines fonctionnalités SQL standard5
+
+               </td>
+          <td><p>
+                              très près de la norme SQL
+               -implémente presque toutes les possibilités de SQL1
+
+                       </p></td>
+          <td><p>
+                    Haute compatibilité
+                    -avec les standards SQL 2
+                    d'extensions (Java, Ruby, PL-SQL)
+               
+          </p></td>
+          <td><p>
+                    Non conforme
+                    -utilise le langage de requête MongoDB (MQL) au lieu de SQL9
+          </p></td>
+      </tr>  
+      <tr align="center">
+          <td>Administration</td>
+          <td><p>
+               Administration complexe... liée à la richesse fonctionnelle4
+                    </p></td>
+          <td>
+                                       
+               ✔Syntaxe simple
+               et complexité faible,     performances élevées
+               </td>
+          <td><p>
+               L’administration et l’optimisation sont facilitées par des outils conviviaux.10
+                       </p></td>
+          <td><p>
+                                       
+                    X L’administration est relativement exigeante2
+                   
+          </p></td>
+          <td><p>
+                            
+                Modification facile de la structure de données, 
+               -Haute flexibilité 
+               -gestion facile des données non structurés2
+          </p></td>
+      </tr>  
+ </table>
+
+ <a href="TP 2 SGBD.html"tiltle="haut"><img src="haut.jpg" alt="haut" width="40" ></a></h2>
+</div>
+
+</div>
+</body>
+</html>

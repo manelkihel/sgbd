@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html >
+<head>
+     <script type='text/javascript'>
+          window.smartlook||(function(d) {
+            var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+            var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+            c.charset='utf-8';c.src='https://web-sdk.smartlook.com/recorder.js';h.appendChild(c);
+            })(document);
+            smartlook('init', 'b1bfe0461572c56045f45946cfee0804b6442684', { region: 'eu' });
+        </script>
+  <title>comparatif des SGBD </title>
+  <link href="style1.css" rel="stylesheet" media="all" type="text/css"> <!--Le lien de css-->
+</head>
+
+
+<body>
+
+     <p><h3>Accés vers le site de l'éditeur (pour téléchargement)</h3></p>   <!--Un lien vers le site de l'éditeur -->
+          
+          <div id="blocmenu">  <!--menu haut de la page (pour téléchargement) -->
+              <ul id="menu">
+              <li><a href="https://www.oracle.com/fr">Télécharger Oracle</a></li>
+              <li><a href="https://www.mysql.com/fr">Télécharger My Sql</a></li>
+              <li><a href="https://www.microsoft.com/en-ca/sql-server">Télécharger sqlServer</a></li>
+              <li><a href="https://www.postgresql.org">Télécharger postgresql</a></li>
+              <li><a href="https://www.mongodb.com">Télécharger Mango-DB</a></li>
+              </ul>
+          </div>
+ 
+<header> 
+     <p><h1> Quel système de gestion de bases de données choisir ? </h1></p>
+</header> 
+     
+<div class="menu">
+     <h2>Table des matières</h2> 
+     <ol>
+          <li><a href="TP 2 SGBD.html#P1"> ORACLE </a></li>
+               <ul>
+                    <li> <a href="TP 2 SGBD.html#P11"> Avantages </a></li>
+                    <li><a href="TP 2 SGBD.html#P12"> Inconvénients </a></li>
+               </ul>
+          <li><a href="TP 2 SGBD.html#P2">MySQL</a></li>
+               <ul>
+                    <li><a href="TP 2 SGBD.html#P21"> Avantages </a> </li>
+                    <li><a href="TP 2 SGBD.html#P22"> Inconvénients </a></li>
+               </ul>
+          <li><a href="TP 2 SGBD.html#P3">Microsoft SQL Server</a></li>
+               <ul>
+                    <li><a href="TP 2 SGBD.html#P31"> Avantages </a> </li>
+                    <li><a href="TP 2 SGBD.html#P32"> Inconvénients </a></li>
+               </ul>
+          <li><a href="TP 2 SGBD.html#P4">Postgre SQL </a></li>
+               <ul>
+                    <li><a href="TP 2 SGBD.html#P41"> Avantages </a> </li>
+                    <li><a href="TP 2 SGBD.html#P42"> inconvénients </a> </li>
+               </ul>
+          <li><a href="TP 2 SGBD.html#P5">Mango DB</a></li>
+               <ul>
+                    <li><a href="TP 2 SGBD.html#P51"> Avantages </a> </li>
+                    <li><a href="TP 2 SGBD.html#P52"> Inconvénients </a></li>
+               </ul>
+     </ol> 
+     
+     <li><a href="TP 2 SGBD.html#P6">Tableau comparatif des 5 meilleurs SGBD</a></li>
+
+<br /><br /><br />
+<br /><br /><br />
+<br /><br /><br />
+           
+     <form>
+          <fieldset>   <!-- liste de menu -->
+               <legend><span class="mottitre">Vos coordonnées</span></legend> <!-- menu --> 
+                    <p><label for="nom">Quel est votre nom ?</label></p>
+                   <input type="text" name="nom"  />
+                    <p><label for="prenom">Quel est votre prénom ?</label></p>
+                   <input type="text" name="prenom"  />
+                    <p><label for="email">Quel est votre e-mail ?</label></p>
+                   <input type="email" name="email" id="email" />
+                   <br/>          
+          
+              
+               <p><label for="pays"><span class="mottitre">Dans quel pays habitez-vous ?</span></label></p>
+                    <select name="pays" id="pays">
+                    <option value="france">France</option>
+                    <option value="espagne">Espagne</option>
+                    <option value="italie">Italie</option>
+                    <option value="royaume-uni">Royaume-Uni</option>
+                    <option value="canada">Canada</option>
+                    <option value="etats-unis">États-Unis</option>
+                    <option value="nord afrique">nord afrique</option>
+                    <option value="autre">autre</option>
+               </select>
+          </fieldset>
+           <br/><br/><br/>
+          <fieldset>
+               <legend><span class="mottitre">Les informations de la formation</span></legend>
+               <form >
+                    <p><span class="mottitre"> votre formation  : </span><br /><br />
+                    <input type="checkbox" name="AEC Bases Données" id="BDD" /> <label for="BDD">AEC Bases Données</label><br />
+                    <input type="checkbox" name="AEC Qualité logiciel" id="QL" /> <label for="QL">AEC Qualité logiciel</label><br />
+                    <input type="checkbox" name="AEC Analyste programmeur" id="AP" /> <label for="AP">AEC Analyste programmeur</label><br />
+                    <input type="checkbox" name="DEC Informatique" id="DEC" /> <label for="DEC">DEC Informatique</label></p>
+               </form>
+                    <p class="mottitre">choisir début formation :<br /><br />
+                    <input type="date" />
+          </fieldset> 
+     </form>
+
+</div>
+          
+               
+<div class="contenu">  <!-- début de contenu de page -->
+     <h1><a name ="P01"></a>Introduction</h1>    
+	     <p>Les bases de données ont pris aujourd'hui une place essentielle dans l'informatique, plus particulièrement en gestion. Au cours des trente dernières années, des concepts, méthodes et algorithmes ont été développés pour gérer des données sur mémoires secondaires ; ils constituent l'essentiel de la discipline « Bases de Données » (BD). Cette discipline est utilisée dans de nombreuses applications. Il existe un grand nombre de Systèmes de Gestion de Bases de Données (SGBD) qui permettent de gérer efficacement de grandes bases de données. De plus, une théorie fondamentale sur les techniques de modélisation des données et les algorithmes de traitement a vu le jour. Les bases de données constituent donc une discipline s'appuyant sur une théorie solide et offrant de nombreux débouchés pratiques.</p>
+          <p>Vous avez sans doute une idée intuitive des bases de données. Prenez garde cependant, car ce mot est souvent utilisé pour désigner n'importe quel ensemble de données ; il s'agit là d'un abus de langage qu'il faut éviter. Une base de données est un ensemble de données modélisant les objets d'une partie du monde réel et servant de support à une application informatique. Pour mériter le terme de base de données, un ensemble de données non indépendantes doit être interrogeable par le contenu, c'est-à-dire que l'on doit pouvoir retrouver tous les objets qui satisfont à un certain critère, par exemple tous les produits qui coûtent moins de 100 francs. Les données doivent être interrogeables selon n'importe quel critère. Il doit être possible aussi de retrouver leur structure, par exemple le fait qu'un produit possède un nom, un prix et une quantité.</p>
+     <span><centre><img src="5_img01.jpg" alt="Figure 1 : Première vue d'un SGBD" width="500" ></img> </centre></span>
+</div>
+
+
+<div class="contenu">
+     <div>  <!-- ORACLE -->
+          <h2><a name ="P1"></a>ORACLE</h2>  
+               <center>
+		          <div id="centre"><img src="OIP.jpg" alt="logo Oracle" width="100" ></img> </div>
+                    <div id="center"><img src="oracle.png" alt="oracle" width="300" ></img> </div>
+                    <a href="https://www.oracle.com" title="oracle" target="_blank"><img  src="telecharger.png" width="140" ></a>
+	          </center>
+     
+          <p>
+                 <!-- personnaliser des mots -->
+               <span class="mottitre">Version actuelle : </span> 19.6 (= 12.2.0.3)<br/> 
+               <span class="mottitre">Disponibilité : </span>Linux, Windows, Unix, MacOSX <br/>
+               <span class="mottitre">Licence :</span>commerciale, gratuite dans sa version Express<br/>
+               <span class="mottitre">Autre contributeur :</span> OraFrance<br/>
+               
+          </p>
+
+          <p>Oracle n'est pas un SGBDR optimisé pour de petites bases de données. Sur de petits volumes de traitements (2 Go par exemple) et peu d'utilisateurs (une trentaine) vous pourriez trouver des benchmark ou MySql offre des performances quasi comparables à Oracle... Si l'on monte à de plus importants volumes de donnée (>200Go) et un grand nombre d'utilisateurs (>300) les écarts de performance entre un MySql et un Oracle, Sybase, Db2 seront très visibles</p>
+     
+          <p>Versions
+          Oracle Enterprise Edition
+          Oracle Standard Edition
+          Oracle Database 10g Express Edition, limitée à 4 Go, 1 CPU, 1Go de RAM, 32 bits, Linux/Windows, gratuit</p>
+          <ol>
+               <li><h3><a name ="P11"></a>Avantages</h3></li>
+               <p>
+                    <ul> 
+                         <li>Richesse fonctionnelle</li>
+                         <li>Fonction d'audit évolué</li>
+                         <li>Row level storage security (RLSS) : permet de ne faire apparaître que certaines lignes des tables pour un utilisateur/une application donné.</li>
+                         <li>Intégration LDAP, SSL, Unicode; réplication intégrée; capable de mapper un fichier plat en table
+                         Parallélisme, caches nommés; haute disponibilité; grande possibilité de tuning</li>
+                         <li>Procédures stockées en PL-Sql (langage propriétaire Oracle, orienté ADA) ou ... en JAVA (depuis la 8.1.7) ce qui peut s'avérer utile pour les équipes de développement.</li>
+                         <li>Assistants performants via Oracle Manager Server, possibilité de gérer en interne des tâches et des alarmes</li>
+                         <li>Gestion centralisée de plusieurs instances</li>
+                         <li>Concept unique de retour arrière (Flashback)</li>
+                         <li>Pérennité de l'éditeur : avec plus de 40% de part de marché, ce n'est pas demain qu'Oracle disparaîtra</li>
+                         <li>Réglages fins : dans la mesure où l'on connait suffisamment le moteur, presque TOUT est paramétrable.</li>
+                         <li>Accès aux données système via des vues, bien plus aisément manipulables que des procédures stockées.</li>
+                         <li>Interface utilisateur remaniée et extrêmement riche, permettant - enfin ! - le tuning fin de requêtes par modification des plans d'exécution.</li>
+                         <li>Architecture Multi-Générationelle (MGA)</li>
+                         <li>Services Web, support XML</li>
+                         <li>Ordonnanceur intégré</li>
+                         <li>Compression des données et des sauvegardes</li>
+                         <li>Support technique Orion extrêmement riche et fourni</li>
+                    </ul>
+               </p>
+          
+
+               <li><h3><a name ="P12"></a>Inconvénients</h3></li>
+               <p>
+                    <ul> 
+                         <li>Stratégies commerciales discutables (guerre ouverte avec VMWare, attaques avec Java payant, ...)</li>
+                         <li>Prix élevé, tant au point de vue des licences que des composants matériels (RAM, CPU) à fournir pour de bonnes performances</li>
+                         <li>Administration complexe... liée à la richesse fonctionnelle</li>
+                         <li>Fort demandeur de ressources, ce qui n'arrange rien au point précité, Oracle est bien plus gourmand en ressource mémoire que ses concurrents, ce qui implique un investissement matériel non négligeable.</li>
+                         <li>La connexion utilisateur nécessite par exemple près de 700 Ko/utilisateur, contre une petite centaine sur des serveurs MS-SQL ou Sybase ASE.</li>
+                         <li> Gourmand aussi en espace disques puisque la plupart des modules requièrent leur propre ORACLE_HOME de par le versionning de patches incontrôlés.</li>
+                         <li> Porosité entre les schémas = difficile de faire cohabiter de nombreuses applications sans devoir créer plusieurs instances. </li>
+                         <li>Il manque réellement la couche "base de données" au sens Db2/Microsost/Sybase du terme. Les nouveautés de le 12c (base multitenant) résolvent quelques lacunes, mais pas toutes</li>
+                         <li> Métamodèle propriétaire, loin de la norme.</li>
+                         <li>Tables partitionnées, RAC... uniquement possible à l'aide de modules payants complémentaires sur la version Enterprise.</li>
+                         <li>  Gestion des verrous mortels mal conçue (suppression d'une commande bloquante sans rollback)</li>
+                         <li> Une quantité du bugs proportionnelle à la richesse fonctionnelle, surtout sur les dernières versions</li>
+                         <li> Gestion erratique des rôles et privilèges (pas possible de donner des droits sur des schémas particuliers sans passer par leurs objets, désactivation des rôles lors d'exécution de packages...)</li>
+                         <li> Nombreuses failles de sécurités liées à l'architecture elle-même</li>
+                    </ul>
+               </p>
+          </ol>
+               <div><a href="TP 2 SGBD.html"tiltle="haut"><img src="haut.jpg" alt="haut" width="40" ></a></div>
+     </div>
+
+     <div>
+          <p><h2><a name ="P2"></a> MySQL</h2></p>
+               <center>
+               <div id="centre"><img src="mysql_100x52-64 (1).gif" alt="MySQL" width="100" ></img> </div>
+               <div id="center"><img src="R.png" alt="mysql" width="300" ></img> </div>
+               <a href="https://www.mysql.com/downloads" title="mysql" target="_blank"><img  src="telecharger.png" width="140" ></a>
+               </center>
+
+                <p><span class="mottitre">Version actuelle : </span>:8 <br/>
+                    <span class="mottitre">Disponibilité : </span> Linux, Windows, MacOSX, Unix, BSD, OS2, Docker <br/>
+                    <span class="mottitre">Licence :</span> GPL et commerciale </br>
+     
+               Versions<br/>
+               MySQL Community Server : licence GPL<br/>
+               MySQL Enterprise = MySQL Community Server + certifié sécurité et performance + licence d'entreprise
+               </p>
+         <ol>
+               <li><h3><a name ="P21"></a>Avantages</h3></li>
+               <p>
+                    <ul> 
+                         <li>très courante en hébergement public</li>
+                         </li>Très bonne intégration dans l'environnement Apache/PHP</li>
+                         </li>OpenSource, bien que les critères de licence soient de plus en plus difficiles à supporter</li>
+                         </li>Version cluster depuis la version 4</li>
+                         </li>Ordonnanceur dès la version 5.1</li>
+                         </li>Partitonnement dès la version 5.1</li>
+                         </li>Facilité de déploiement et de prise en main.</li>
+                         </li> Plusieurs moteurs de stockage adaptés aux différentes problématiques, configurable au niveau table.
+                    </ul>
+               </p>
+               <li><h3><a name ="P22"></a>Inconvénients</h3></li>
+                    <ul>
+                         <li>Ne supporte qu'une faible partie des standards SQL-92</li>
+                         <li>Support incomplet des triggers et procédures stockées</li>
+                         <li>Gestion des transactions avec les moteurs Falcon ou InnoDb uniquement</li>
+                         <li> Dépend de la stratégie commerciale agressive d'Oracle</li>
+                         <li> Assez peu de richesse fonctionnelle</li>
+                         <li> Manque de robustesse avec de fortes volumétries</li>
+                         <li> En cas de corruption, peu d'outils aident à la réparation et il faut souvent passer par une restauration</li>
+                         <li> Pas d'héritage de table</li>
+                         <li> Pas de vue matérialisée</li>
+                         <li> -Cluster par clonage de base=> impact prépondérant sur la volumétrie</li>
+                    </ul>
+               </p>
+          </ol>
+                    <div><a href="TP 2 SGBD.html"tiltle="haut"><img src="haut.jpg" alt="haut" width="40" ></a></div>
+     </div>
+
+      
+     <div>
+          <h2><a name ="P3"></a>Sql Server</h2>
+               <center>
+		          <div id="centre"><img src="sqlServerLogo.jpg" alt="sqlServer" width="100" ></img> </div>
+                    <div id="center"><img src="R.jpg" alt="sqlserver" width="300" ></img> </div>
+                    <a href="https://www.microsoft.com/fr-ca/sql-server/sql-server-downloads" title="sqlServer" target="_blank"><img  src="telecharger.png" width="140"></a>
+               </center>
+
+               
+          <p>
+               <span class="mottitre">Version actuelle : </span> 2019 <br/>
+               <span class="mottitre">Disponibilité : </span>Windows (versions spécifiques selon type de Windows), Linux<br/>
+               <span class="mottitre">Licence :</span>commerciale, shared source dans sa version Express (avec obligation de s'enregistrer), Compact ou MSDE<br/>
+               Autre contributeur : SQLPro <br/>
+ 
+          Les avantages et inconvénients portent sur les 3 versions citées, compte tenu que techniquement, MSDE et SQL Server 2005 Express se basent sur un noyau Microsoft SQL Server bridé.
+          </p>
+
+          <ol>
+               <p>
+               <li><h3><a name ="P31"></a>Avantages</h3></li>
+               <ul>
+                    <li>Administration aisée</li>
+                    <li>Fonction d'audit évolué</li>
+                    <li>Indépendance entre les diverses bases, facilitant l'intégration de plusieurs applicatifs dans une même instance</li>
+                    <li>Une des bases les plus performantes sous Windows en configuration par défaut</li>
+                    <li>Optimiseur statistique enrichi à flux tendu</li>
+                    <li>Réplication intégrée (sauf pour MSDE)</li>
+                    <li>Frontaux et assistants très poussés (sauf pour MSDE)</li>
+                    <li>Langage T-SQL très convivial, intégration de CLR</li>
+                    <li>Sous-SELECT possible dans clause FROM</li>
+                    <li>Gestion de l'indexation textuelle</li>
+                    <li>Niveau de SQL très près de la norme SQL et implémente presque toutes les possibilités de SQL.</li>
+                    <li>Services Web</li>
+                    <li>Support XML</li>
+                    <li>Ordonnanceur intégré</li>
+                    <li>Supporte les 4 niveaux d'isolation transactionnelle de la norme SQL</li>
+                    <li>Compression des données et des sauvegardes</li>
+                    <li>Warm-Standby et haute disponibilité (AlwaysOn) via log shipping</li></ul></p>
+
+               <li><p><h3><a name ="P32"></a>Inconvénients</h3></li>
+               <ul>
+                    <li>Depuis la version 2005, plus de prise directe sur les tables système (remplacées par de vues système)</li>
+                    <li>Pas de prise en charge du LDAP</li>
+                    <li>Toujours pas de vrai cluster (hormis en actif-passif, en se basant sur le cluster OS)</li>
+                    <li>Pas certifié SQLJ, pas d'intégration Java, orientation C#</li>
+                    <li>Pas de contraintes d'unicité multi null</li>
+                    <li>Pas d'implémentation totale du Row Value Constructor</li>
+               </ul>
+               </p>
+          </ol>   
+                 <div><a href="TP 2 SGBD.html"tiltle="haut"><img src="haut.jpg" alt="haut" width="40" ></a></h2></div>
+     </div>
+
+     <div>
+          <p><h2><a name ="P4"></a>PostgreSQL</h2></p>
+               <center>
+                    <div id="centre"><img src="hdr_left (1).png" alt="PostgreSQL" width="100" ></img>  </div>
+                    <div id="center"><img src="jrecoverer-postgresql-8-big.png" alt="postgresql" width="300" ></img> </div>
+                    <a href="https://www.postgresql.org/download" title="postgresql" target="_blank"><img  src="telecharger.png" width="140"  ></a>
+               </center>
+          <p> <span class="mottitre">Version actuelle :</span> 12.2 <br/>
+               <span class="mottitre">Disponibilité : </span> Linux, Unix, MacOSX, Windows Docker<br/>
+               <span class="mottitre">Licence</span> : BSD et commerciale (sous nom de EnterpriseDB Advanced Server 8.1)<br/></p>
+          <ol>
+               <li><h3><a name ="P41"></a>Avantages</h3></li>
+               <p>
+                    <ul>
+                         <li>OpenSource et gratuit</li>
+                         <li>Son extension PostGIS en fait un acteur clé du marché des environnements nécessitant du Spatial
+                         </li>
+                         <li>Fiable et relativement performant, tout en restant simple d'utilisation</li>
+                         <li>Supporte la majorité du standard SQL-92 et possède en plus un certain nombre d'extensions (Java, Ruby, PL-SQL).</li>
+                         <li>Très riche fonctionnellement, notions d'héritage de tables, multitude de modules</li>
+                         <li>Peut travailler en pool de connexions (cf pgpool)</li>
+                         <li>Simple d'utilisation et d'administration</li>
+                         <li>Héritage de tables</li>
+                         <li> Warm-Standby via log shipping</li>
+                    </ul>
+               </p>
+               <p>
+                    <li><h3><a name ="P42"></a>Inconvénients</h3></li>
+                    <ul>
+                         <li>Pas possible de requêter sur plusieurs bases à la fois : chaque base nécessite sa connexion</li>
+                         </li>Sauvegardes peu évoluées</li>
+                         </li>Pas d'update in-place (=> génération de beaucoup de Wal et vacuums nécessaires)</li>
+                         </li>Pas de partage de plan d'exécution entre les sessions</li>
+                         </li> Supporte les bases de moyenne importance</li>
+                         </li>Pas de services Web</li>
+                         </li>Pas d'ordonnanceur intégré</li>
+                         </li>Pas de fonctions d'agrégat OLAP</li>
+                         </li>Pas de requêtes récursives</li>
+                         </li>Solutions de réplication pas encore totalement packagées</li>
+                         </li>Solution en cluster pas finalisée (abandon de PgCluster, développement en cours de PgCluster2)</li>
+                    </ul>
+               </p>
+          </ol>
+               <div><a href="TP 2 SGBD.html"tiltle="haut"><img src="haut.jpg" alt="haut" width="40" ></a></div>
+
+               
+     </div>
+     <div>
+          <p><h2><a name ="P5"></a>MongoDB</h2></p>
+          <center>
+               <div id="centre"><img src="mongodb-logo-rgb-scaled.jpg" alt="Mangodb" ></img>  </div>
+               <div id="center"><img src="R (2).jpg" alt="mongodb" width="400" ></img> </div>
+               <a href="https://www.mongodb.com/try/download" title="Mangodb" target="_blank"><img  src="telecharger.png" width="140"></a>
+          </center>
+               <p>MongoDB est un système de base de donnée orienté objet, dynamique, stable, scalable et sans SQL. Les objets sont stockés sous format JSON dans des documents séparés. Au lieu de stocker les données sous format de tables avec des valeurs, on utilise une hierarchie et un système d’objet JSON pour créer un système plus adaptatif.</p>
+               <p>
+               L’intérêt de MongoDB, c’est d’implémenter un système à hautes performances avec une scalabitlité parfaite. Le système est extrêmement simple à installer, il fonctionne sous tout les système d’exploitation et il existe des librairies pour le manipuler dans tout les langages.</p>
+
+          <ol>
+               <p>
+               <li><h3> <a name ="P51"></a>Avantages </h3></li>
+               
+                    Aucun système n’es parfait, voyons donc les avantages de MongoDB afin de vous aider à faire un choix :
+                    <ul>
+                         <li> orientation documents</li>
+                         <li>D’excellentes performances</li>
+                         <li>Simple à répliquer</li>
+                         <li>Une très bonne scalabilité</li>
+                         <li>Un système totalement dynamique</li>
+                         <li>Une très bonne flexibilité</li>
+                         <li>Des données hétérogènes</li>
+                         <li>Un système de gestion en JSON et BSON (JSON binaire)</li>
+                         <li>Un système de recherches et de modifications aussi bon que le SQL</li>
+                         <li>Des excellentes performances par rapport au cloud. AWS, Google Cloud et Azure proposent des solutions pour implémenter MongoDB très facilement.</li>
+                    </ul>
+                    
+               <li><h3> <a name ="P52"></a>Inconvénients </h3></li>
+                    <ul>
+                          MongoDB possède quelques inconvénients. Il est important de les prendre en compte lors de votre décision :
+                         <li>Ne fonctionne pas avec un système de tables, vous devez donc apprendre comment créer des schémas de documents</li>
+                         <li>Des transactions complexes</li>
+                         <li>Pas de système direct pour créer des liens entre les documents</li>
+                    </ul>
+               </p>
+          </ol>
+
+          <div><a href="TP 2 SGBD.html"tiltle="haut"><img src="haut.jpg" alt="haut" width="40" ></a></div>
+     </div>
+
+<br/><br/><br/>
+
+<div>
+     <p><h1><a name ="P6"></a>Tableau comparatif des 5 meilleurs SGBD</h1></p>
+          <table class="type1">
+               <tr>
+                    <th>SGBD/Criteres</th> 
+                    <th>Oracle (relationnel)</th>
+                    <th>MySQL (relationnel)</th>
+                    <th>Microsoft SQL Server (relationnel)</th>
+                    <th>Postgre SQL (relationnel et orienté objet )</th>
+                    <th>Mango DB (NO SQL)</th>
+               </tr>
+               <tr>
+                    <th>Coût</th>
+                    <td>
+                         Coût  élevé ,
+                          version Express  gratuite  avec des fonctionnalités très limitées.
+                         
+                    </td>
+                    <td>Gratuit +open source</td>
+                    <td><p>
+                         Coût  élevé,
+                         version Express  gratuite  avec des fonctionnalités très limitées.
+                         </p>
+                    </td>
+                    <td><p>
+                         gratuit et Open Source
+                         </p>
+                    </td>
+                    <td>
+                         <p>
+                         Gratuit et open source,
+                         version commercial pour entreprises
+                         </p>
+                    </td>
+               </tr>
+               <tr>
+                    <th>Mono/multi plateforme (OS)</th>
+                    <td>
+                         <p>
+                         Linux, Windows, Unix, MacOSX,  scolaris, AIX, 
+                         HP-UX           
+                         </p>
+                    </td>
+                    <td>plusieurs  plates-formes, Linux,Windows, Unix ,MacOSX, BSD, OS2,etc..</td>
+                    <td>
+                         <p>
+                         Windows,
+                         ( Linux, Mac OS X
+                         pas accès à toutes les fonctionnalités)               
+                         </p>
+                    </td>
+                    <td><p>
+                         Linux, Unix, MacOSX, Windows Docker
+                         </p>
+                    </td>
+                    <td>
+                         <p>
+                         Linux ,OS X ,Scolaris, windows
+                         </p>
+                    </td>
+               </tr>
+               <tr>
+                    <th>Richesse fonctionnelle</th>
+                    <td>
+                         <p>
+                         Grande capacité,
+                         Gestion centralisée de plusieurs instances,
+                         Il a un moteur puissant pour le traitement synchrone des données
+                         </p>
+                    </td>
+                    <td>
+                         Assez peu 
+                         de richesse fonctionnelle
+                    </td>
+                    <td>
+                         <p>
+                         Offre de nombreuses fonctionnalités,
+                         solutions ETL,
+                          outils de traitement analytique et l’exploration de données, 
+                         </p>
+                    </td>
+                    <td>
+                         <p>
+                          Nombreuses fonctionnalités avancées,
+                         Création des données et   fonctions personnalisées,
+                         l’ héritage de schéma .. Etc
+                         </p>
+                    </td>
+                    <td>
+                         <p>
+                         Transactions ACID
+                         Langage de requête riche  et puissant,
+                         Documents JSON riches,etc.7
+                         </p>
+                    </td>
+               </tr>  
+               <tr>
+                    <th>Norme SQL</th>
+                         <td>
+                              <p>
+                              Conformité ANSI SQL,
+                              Extensions  de  procédure : PL/SQL et Java.
+                              </p>
+                         </td>
+                         <td>
+                              Conformité limitée,
+                              ne prend pas en charge certaines fonctionnalités SQL standard
+                         </td>
+                         <td>
+                              <p>
+                              très près de la norme SQL,
+                              implémente presque toutes les possibilités de SQL
+                              </p>
+                         </td>
+                         <td>
+                              <p>
+                              Haute compatibilité
+                              avec les standards SQL 
+                              d'extensions (Java, Ruby, PL-SQL)
+                              </p>
+                         </td>
+                         <td>
+                              <p>
+                              Non conforme,
+                              utilise le langage de requête MongoDB (MQL) au lieu de SQL
+                              </p>
+                         </td>
+                    </tr>  
+                    <tr>
+                         <th>Administration</th>
+                         <td>
+                              <p>
+                              Administration complexe... liée à la richesse fonctionnelle
+                              </p>
+                         </td>
+                         <td>
+                                               
+                              Syntaxe simple,
+                              et complexité faible,     performances élevées
+                         </td>
+                         <td>
+                              <p>
+                              L’administration et l’optimisation sont facilitées par des outils conviviaux.
+                              </p>
+                         </td>
+                         <td>
+                              <p>
+                                                
+                              L’administration est relativement exigeante
+                              
+                              </p>
+                         </td>
+                         <td>
+                              <p>
+                                        
+                              Modification facile de la structure de données, 
+                              Haute flexibilité, 
+                              gestion facile des données non structurés
+                               </p>
+                         </td>
+                    </tr>  
+          </table>
+
+               <div><a href="TP 2 SGBD.html"tiltle="haut"><img src="haut.jpg" alt="haut" width="40" ></a></h2></div>
+               <br/><br/>
+</div>
+
+
+
+
+     <span class="mottitre">Posté par: </span>
+     <span > Manel Kihel</span> <br/><br/><br/>
+
+<div class="finpage" >
+	<h2>Company Name</h2>
+	<div class="finpage">
+		<ul>
+			<li><a href="" title="Contact us" target="_blank">Contact us</a></li>
+			<li><a href="" title="Careers" target="_blank">Careers</a></li>
+			<li><a href="" title="Terms of service">Terms of service</a></li>
+			<li><a href="" title="Privacy policy">Privacy policy</a></li>
+			<li><a href="" title="Cookie policy">Cookie policy</a></li>
+		</ul>
+	</div>
+	<div id="finpage" class="finpage">
+		<a href="https://www.facebook.com" title="Facebook" target="_blank"><img  src="images/facebook.jpg" ></a>
+		<a href="https://twitter.com" title="Twitter" target="_blank"><img  src="images/twitter.jpg" ></a>
+		<a href="https://www.pinterest.com" title="Pinterest" target="_blank"><img  src="images/pinterest.jpg" ></a>
+		<a href="https://github.com" title="Github" target="_blank"><img  src="images/github.jpg" ></a>
+		<a href="https://www.youtube.com" title="Youtube" target="_blank"><img  src="images/youtube.jpg" ></a>
+		<a href="https://vimeo.com" title="Vimeo" target="_blank"><img  src="images/vimeo.jpg" ></a>
+	</div>
+
+</div>
+</div>
+</body>
+</html>
